@@ -33,32 +33,38 @@ export default function ColorPicker(props) {
           border: '1px dotted grey'
         }}
       >
-        <p>{`hsl(${changeHue}, ${changeSaturation}%, ${changeLightness}%)`}</p>
         <section>
-          <label>Hue</label>
-          <input
-            type="range"
-            onChange={event => setChangeHue(event.target.value)}
-            name="Hue"
-            min="0"
-            max="240"
-          />
-          <label>Saturation</label>
-          <input
-            type="range"
-            onChange={event => setChangeSaturation(event.target.value)}
-            name="Saturation"
-            min="0"
-            max="100"
-          />
-          <label>Lightness</label>
-          <input
-            type="range"
-            onChange={event => setChangeLightness(event.target.value)}
-            name="Lightness"
-            min="0"
-            max="100"
-          />
+          <p>{`hsl(${changeHue}, ${changeSaturation}%, ${changeLightness}%)`}</p>
+          <div className="slider">
+            <label>Hue</label>
+            <input
+              type="range"
+              onChange={event => setChangeHue(event.target.value)}
+              name="Hue"
+              min="0"
+              max="240"
+            />
+          </div>
+          <div className="slider">
+            <label>Saturation</label>
+            <input
+              type="range"
+              onChange={event => setChangeSaturation(event.target.value)}
+              name="Saturation"
+              min="0"
+              max="100"
+            />
+          </div>
+          <div className="slider">
+            <label>Lightness</label>
+            <input
+              type="range"
+              onChange={event => setChangeLightness(event.target.value)}
+              name="Lightness"
+              min="0"
+              max="100"
+            />
+          </div>
           <button onClick={randomColor}>Random Color</button>
           <button onClick={addColorToDOM}>Save Color</button>
         </section>
